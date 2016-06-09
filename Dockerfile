@@ -19,7 +19,7 @@ ENV STACKSMITH_STACK_ID="a3h98hz" \
     STACKSMITH_STACK_NAME="jmarbach/node-todo" \
     STACKSMITH_STACK_PRIVATE="1"
 
-RUN bitnami-pkg install node-6.2.1-0 --checksum f38ccc063ccc74ab095ddcb5bd227c0722e348f53e31652fd2840779be9e581f
+RUN bitnami-pkg install node-6.2.0-1 --checksum 94805fccddfc7f4892ba21b816abd73ee3a1221c7e9d2fa045669e180f3d824b
 
 ENV PATH=/opt/bitnami/node/bin:/opt/bitnami/python/bin:$PATH \
     NODE_PATH=/opt/bitnami/node/lib/node_modules
@@ -33,4 +33,4 @@ WORKDIR /app
 RUN npm install
 
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
